@@ -32,6 +32,7 @@ index e713b17..4c0742a 100644
 git diff data/northern.csv
 
 # add file to stage area
+
 # "git add filename"
 git add report.txt
 git status report.txt
@@ -51,6 +52,7 @@ git diff -r HEAD data/northern.csv
 git add data/eastern.csv 
 
 # edit a file?
+
 # "nano filename"
 nano names.txt
 Lovelace
