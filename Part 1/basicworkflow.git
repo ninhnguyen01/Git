@@ -1,0 +1,111 @@
+# check state of repository
+git status
+
+# "git status" shows you which files are in this staging area, 
+# and which files have changes that haven't yet been put there. 
+# In order to compare the file as it currently is to what you last saved, 
+# you can use "git diff filename". "git diff" without any filenames will show 
+# you all the changes in your repository, while "git diff directory" will show you 
+# the changes to the files in some directory.
+git diff dental
+
+# (example below)
+diff --git a/report.txt b/report.txt
+index e713b17..4c0742a 100644
+--- a/report.txt
++++ b/report.txt
+@@ -1,4 +1,5 @@
+-# Seasonal Dental Surgeries 2017-18
++# Seasonal Dental Surgeries (2017) 2017-18
++# TODO: write new summary
+
+# This shows:
+
+    The command used to produce the output (in this case, diff --git). In it, a and b are placeholders meaning "the first version" and "the second version".
+    An index line showing keys into Git's internal database of changes. We will explore these in the next chapter.
+    --- a/report.txt and +++ b/report.txt, wherein lines being removed are prefixed with - and lines being added are prefixed with +.
+    A line starting with @@ that tells where the changes are being made. The pairs of numbers are start line and number of lines (in that section of the file where changes occurred). This diff output indicates changes starting at line 1, with 5 lines where there were once 4.
+    A line-by-line listing of the changes with - showing deletions and + showing additions (we have also configured Git to show deletions in red and additions in green). Lines that haven't changed are sometimes shown before and after the ones that have in order to give context; when they appear, they don't have either + or - in front of them.
+
+#
+
+git diff data/northern.csv
+
+# add file to stage area
+# "git add filename"
+git add report.txt
+git status report.txt
+
+# what's going to be committed?
+
+# To compare the state of your files with those in the staging area, you can use git diff -r HEAD. 
+# The -r flag means "compare to a particular revision", 
+# and HEAD is a shortcut meaning "the most recent commit".
+# You can restrict the results to a single file or directory 
+# using git diff -r HEAD path/to/file, 
+# where the path to the file is relative to where you are 
+# (for example, the path from the root directory of the 
+# repository).
+git diff -r HEAD
+git diff -r HEAD data/northern.csv
+git add data/eastern.csv 
+
+# edit a file?
+# "nano filename"
+nano names.txt
+Lovelace
+Hopper
+Johnson
+Wilson
+
+# commit changes?
+
+# "git commit"
+# By default, Git launches a text editor to let you write this 
+# message. To keep things simple, you can use -m "some message in quotes" 
+# on the command line to enter a single-line message
+# If you accidentally mistype a commit message, 
+# you can change it using the --amend flag.
+git status report.txt
+git commit -m "Adding a Reference."
+
+# view a repository's history?
+
+# The command "git log" is used 
+# to view the log of the project's history.
+# The "commit" line displays a unique ID for 
+# the commit called a hash; 
+git log
+
+# view a specific file's history?
+
+#  You can do this using "git log path", 
+# where path is the path to a specific file or directory. 
+# The log for a file shows changes made to that file; 
+# the log for a directory shows when files were added 
+# or deleted in that directory, rather than when the 
+# contents of the directory's files were changed.
+git log data/southern.csv
+
+# write better log message
+
+# If you run git commit without -m "message", 
+# Git launches a text editor with a template like this:
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       modified:   skynet.R
+#
+
+git commit
+# nano editor open up
+# Enter a message
+# ctrl + o 
+# press enter
+# ctrl + x
+# done 
+
