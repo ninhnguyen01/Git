@@ -81,7 +81,7 @@ git log
 
 # view a specific file's history?
 
-#  You can do this using "git log path", 
+# You can do this using "git log path", 
 # where path is the path to a specific file or directory. 
 # The log for a file shows changes made to that file; 
 # the log for a directory shows when files were added 
