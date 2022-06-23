@@ -1,4 +1,4 @@
-# commit changes selectiveley?
+# commit changes selectively?
 
 # The syntax for staging a single file is git add path/to/file.
 # If you make a mistake and accidentally stage a file you 
@@ -82,6 +82,7 @@ cat data/western.csv
 git commit data/western.csv -m "test."
 
 # undo all of the changes I have made?
+
 # One way to do this is to give git reset a directory. 
 # For example, git reset HEAD data will unstage any files 
 # from the data directory. Even better, if you don't provide 
