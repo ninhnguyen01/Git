@@ -104,7 +104,9 @@ git merge summary-statistics master -m "Merging summary statistics."
 # Inside the file, Git leaves markers that look like this 
 # to tell you where the conflicts occurred:
 
-# <<<<<<< destination-branch-name
+# 
+
+<<<<<<< destination-branch-name
 ...changes from the destination branch...
 =======
 ...changes from the source branch...
